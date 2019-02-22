@@ -1,0 +1,3 @@
+[submodule "hackernews-node"]
+	path = hackernews-node
+	url = https://github.com/mariobermudezjr/how-to-graphql-hackernews
