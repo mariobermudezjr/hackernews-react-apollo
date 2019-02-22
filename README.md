@@ -8,6 +8,10 @@
 
 ###### Nikolas is a developer and head of content at Prisma. He is excited about GraphQL as a new API technology and has a passion for learning and sharing knowledge.
 
+[Tutorial Link](https://www.howtographql.com/react-apollo/0-introduction/ 'How To GraphQL Tutorial')
+
+---
+
 ## Overview
 
 In the previous tutorials, you learned about major concepts and benefits of GraphQL. Now is the time to get your hands dirty and start out with an actual project!
@@ -20,6 +24,8 @@ You’re going to build a simple clone of Hackernews. Here’s a list of the fea
 - Authenticated users can create new links
 - Authenticated users can upvote links (one vote per link and user)
 - Realtime updates when other users upvote a link or create a new one
+
+---
 
 #### In this track, you’ll use the following technologies for building the app:
 
@@ -37,6 +43,8 @@ You’re going to build a simple clone of Hackernews. Here’s a list of the fea
 
 You’ll create the React project with create-react-app, a popular command-line tool that gives you a blank project with all required build configuration already setup.
 
+---
+
 #### Why a GraphQL Client?
 
 In the Clients section in the GraphQL part, we already covered the responsibilities of a GraphQL client on a higher level, now it’s time to get more concrete.
@@ -44,6 +52,8 @@ In the Clients section in the GraphQL part, we already covered the responsibilit
 In short, you should use a GraphQL client for tasks that are repetitive and agnostic to the app you’re building. For example, being able to send queries and mutations without having to worry about lower-level networking details or maintaining a local cache. This is functionality you’ll want in any frontend application that’s talking to a GraphQL server - why build it yourself when you can use one of the amazing GraphQL clients out there?
 
 There are a few GraphQL client libraries available. For very simple use cases (such as writing scripts), graphql-request might already be enough for your needs. However, chances are that you’re writing a somewhat larger application where you want to benefit from caching, optimistic UI updates and other handy features. In these cases, you have the choice between Apollo Client and Relay.
+
+---
 
 #### Apollo vs Relay
 
@@ -53,7 +63,23 @@ Relay is Facebook’s homegrown GraphQL client that they open-sourced alongside 
 
 The performance benefits of Relay come at the cost of a notable learning curve. Relay is a pretty complex framework and understanding all its bits and pieces does require some time to really get into it. The overall situation in that respect has improved with the release of the 1.0 version, called Relay Modern, but if you’re for something to just get started with GraphQL, Relay might not be the right choice just yet.
 
-Apollo Client is a community-driven effort to build an easy-to-understand, flexible and powerful GraphQL client. Apollo has the ambition to build one library for every major development platform that people use to build web and mobile applications. Right now there is a JavaScript client with bindings for popular frameworks like React, Angular, Ember or Vue as well as early versions of iOS and Android clients. Apollo is production-ready and has handy features like caching, optimistic UI, subscription support and many more.
+Apollo Client is a ~community-driven~ effort to build an easy-to-understand, flexible and powerful GraphQL client. Apollo has the ambition to build one library for every major development platform that people use to build web and mobile applications. Right now there is a JavaScript client with bindings for popular frameworks like React, Angular, Ember or Vue as well as early versions of iOS and Android clients. Apollo is production-ready and has handy features like caching, optimistic UI, subscription support and many more.
+
+---
+
+Here’s an overview of the packages we will install:
+
+- `apollo-boost` offers some convenience by bundling several packages you need when working with Apollo Client:
+
+  - `apollo-client`: Where all the magic happens
+  - `apollo-cache-inmemory`: Our recommended cache
+  - `apollo-link-http`: An Apollo Link for remote data fetching
+  - `apollo-link-error`: An Apollo Link for error handling
+  - `apollo-link-state`: An Apollo Link for local state management
+  - `graphql-tag`: Exports the gql function for your queries & mutations
+
+- `react-apollo` contains the bindings to use Apollo Client with React.
+- graphql contains Facebook’s reference implementation of GraphQL - Apollo Client uses some of its functionality as well.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
