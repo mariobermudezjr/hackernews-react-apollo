@@ -1,0 +1,86 @@
+// Queries
+
+query {
+  feed {
+    count
+    links {
+      id
+      description
+      url
+      createdAt
+    }
+  }
+}
+
+query {
+  link(id: "link-1") {
+    id
+    description
+    url
+  }
+}
+
+// Mutations
+
+mutation {
+  signup(
+    name: "Alice3"
+    email: "alice3@prisma.io"
+    password: "graphql3"
+  ) {
+    token
+    user {
+      id
+    }
+  }
+}
+
+mutation {
+  login(
+    email: "alice2@prisma.io"
+    password: "graphql2"
+  ) {
+    token
+    user {
+      email
+      links {
+        url
+        description
+      }
+    }
+  }
+}
+
+mutation {
+  post(
+    url: "www.react-native.org"
+    description: "An awesome React-Native conference"
+  ) {
+    id
+  }
+}
+
+mutation {
+  post(
+url: "www.prisma.io"
+description: "Prisma replaces traditional ORMs"
+  ){
+    id
+  }
+}
+
+mutation {
+  updateLink(id: "link-2", description: "Why the heck?", url: "www.mynewurl.com"){
+    id
+    description
+    url
+  }
+}
+
+mutation {
+  deleteLink(id: "link-1") {
+    id
+    url
+    description
+  }
+}
